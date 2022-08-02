@@ -161,7 +161,7 @@ const reduce = (state, action) => {
 export const ProductContext = createContext();
 export const ProductDispath = createContext();
 
-export default function ContextProvider({ children }) {
+function ContextProvider({ children }) {
   const [state, dispath] = useReducer(reduce, initialState);
   return (
     <ProductContext.Provider value={{ state }}>
@@ -171,3 +171,5 @@ export default function ContextProvider({ children }) {
     </ProductContext.Provider>
   );
 }
+
+export default ContextProvider;
